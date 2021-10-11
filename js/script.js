@@ -142,7 +142,7 @@ function calculoIVA(){
 
 function promo(){
   promocion = document.querySelector('.offer')
-  promocion.addEventListener('change', ()=>{    
+  promocion.addEventListener('change', ()=>{
     mostrarCoti()
     if (promocion.value == 1) {
       descuento_1pago = 0.2;
