@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Cotizador de Garantía</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+  <header class="logo">
+    <img src="../img/logo-color.svg" alt="logo">
+  </header>
+
+  <main class="cotizador">
+    <div class="cotizador-box">
+      <section class="contain-title">
+        <h1>COTIZADOR</h1>
+      </section>
+      <section class="contain-option">
+        <div class="option-vivienda">
+          <input type="radio" name="option" class="vivienda" value="1"> VIVIENDA
+        </div>
+        <div class="option-comercial">
+          <input type="radio" name="option" class="comercial" value="2"> COMERCIAL
+        </div>
+      </section>
+
+      <section class="data">
+        <div class="data-block">
+          <label for="alquiler">ALQUILER</label>
+          <input type="number" class="input-data" name="alquiler" id="alquiler">
+        </div>
+        <div class="data-block">
+          <label for="expensas">EXPENSAS</label>
+          <input type="number" class="input-data" name="expensas" id="expensas">
+        </div>
+        <div class="data-block">
+          <label for="tiempo">AÑOS</label>
+          <input type="number" class="input-data" name="tiempo" id="tiempo">
+        </div>
+        <div class="data-block">
+          <label for="total">TOTAL</label>
+          <p id="total"></p>
+        </div>
+      </section>
+      <section class="contain-option-comercial hide">
+        <div class="ajuste">
+          <label for="ajuste">AJUSTE</label>
+          <input type="number" name="ajuste" id="ajuste">
+        </div>
+        <div class="tipo-ajuste">
+          <select class="tipo-ad" name="tipo-ad">
+            <option value="OPCIONES">OPCIONES</option>
+            <option value="ANUAL">ANUAL</option>
+            <option value="SEMESTRAL">SEMESTRAL</option>
+            <option value="TRIMESTRAL">TRIMESTRAL</option>
+          </select>
+        </div>
+        <div class="iva">
+          <input type="checkbox" id="iva" name="option" value="1"> IVA
+        </div>
+      </section>
+      <section class="btn">
+        <button type="button" class="act-btn" name="button">CALCULAR</button>
+        <button type="reset" class="clear-btn" name="clear">BORRAR</button>
+      </section>
+      <section class="promo">
+        <label for="offer">PROMOCIÓN</label>
+        <select class="offer" name="offer">
+          <option value="0">Elige una opción</option>
+          <option value="1">Promo del mes</option>
+          <option value="2">Referido Inmobiliaria</option>
+          <option value="3">Renovación</option>
+          <option value="4">Garantía Anticipada</option>
+          <option value="5">Asociación Enfermeros Venezolanos en Argentina</option>
+          <option value="6">Asociación Farmacéuticos Venezolanos</option>
+          <option value="7">Asociación Kinesiólogos Venezolanos</option>
+          <option value="8">Asociación Mujeres Colombianas</option>
+          <option value="9">Asociación Médicos Venezolanos</option>
+          <option value="10">Asociación Ingienieros en Argentina</option>
+          <option value="11">Renovación FINAER</option>
+          <!-- <option value="12">Descuento Personalizado</option> -->
+        </select>
+      </section>
+    </div>
+    
+    <aside class="text_coti hide">
+      <form class="coti-option">
+        <div class="unaCuota">
+          <input type="checkbox" id="coti_una" name="1cuota" value="1cuota">
+          <label for="1cuota"> 1 cuota</label>
+        </div>
+        <div class="tresCuota">
+          <input type="checkbox" id="coti_tres" name="1cuota" value="3cuota">
+          <label for="3cuota"> 3 cuotas</label>
+        </div>
+        <div class="masCuota">
+          <input type="checkbox" id="coti_mas" name="masCuota" value="masCuota">
+          <label for="masCuota"> +Cuotas</label>
+        </div>
+      </form>
+
+
+      <div class="coti-info">
+        <div class="logo-coti">
+          <img src="../img/logoGY-color.png" alt="logo-coti">
+          <p class="date"></p>
+        </div>
+
+        <p class="coti-title">COTIZACIÓN</p>
+        <!-- <hr> -->
+        <p class="alquiler_valor"></p>
+        <p class="expensas_valor"></p>
+        <p class="ajuste_valor hide"></p>
+        <p class="total_garantia"></p>
+        <hr>
+        <p class="totalidad hide"></p>
+        <hr>
+        <div class="tres_container hide">
+          <p class="tres_pagos"></p>
+          <span class="tresCuotas"></span>
+          <hr>
+        </div>
+
+        <div class="masCuotas_container hide">
+          <p class="mas_cuotas grupo_cuotas"></p>
+          <span class="adelanto grupo_cuotas"></span><br>
+          <span class="cuatro_cuotas_fijas grupo_cuotas"></span><br>
+          <span class="cinco_cuotas_fijas grupo_cuotas"></span>
+          <hr>
+        </div>
+
+      </div>
+      <button type="button" name="button" class="pdf">Generar PDF</button>
+
+    </aside>
+  </main>
+  <div class="box1 hide"></div>
+
+
+
+  <footer>Copyright 2021 - Fidel Parabacuto</footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.1/dist/html2canvas.min.js"></script>
+  <script src="../js/script.js"></script>
+
+</body>
+
+</html>
