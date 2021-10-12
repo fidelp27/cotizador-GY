@@ -30,6 +30,7 @@
   let cinco_cuotas = document.querySelector('.cinco_cuotas_fijas');
   let porcentaje = 0.06;
   let btnPDF = document.querySelector('.pdf')
+  let msgOption = document.querySelector('.msgOption')
 
   let promedio;
   let arrAjustes = [];
@@ -48,6 +49,7 @@ btnCalcular.addEventListener('click', (e)=>{
   }else if (optComercial.checked) {
     calcAlquilerComercial()
   }
+  validarOpciones()
 })
 
 btnPDF.addEventListener('click', ()=>{
@@ -214,10 +216,12 @@ function mostrarCoti(){
 function showHideComercial(){
   optComercial.addEventListener('change', ()=>{
     selComercial.classList.remove('hide')
+    msgOption.classList.add('hide')
   })
 
   optVivienda.addEventListener('change', ()=>{
     selComercial.classList.add('hide')
+    msgOption.classList.add('hide')
   })
 }
 function ocultarCuotas(){
@@ -253,7 +257,17 @@ function mostrarDatos(){
     expensas_valor.innerHTML = `Expensas: $ ${expensas}`
     ajuste_valor.innerHTML = `Ajuste: ${ajuste*100}%`
 }
-
+////////////////Validaciones////////////////
+function validarOpciones(){
+  optVivienda = document.querySelector('.vivienda')
+  optComercial = document.querySelector('.comercial')
+  msgOption;
+  if (!optVivienda.checked && !optComercial.checked) {
+    msgOption.classList.remove('hide')    
+  }else {
+    msgOption.classList.add('hide')
+  }
+}
 //////////////////Capturar pantalla y Crear PDF///////////////
 function getScreen(){
 
